@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+@tailwind base;
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+@layer base {
+    img {
+        display: inline-block;
+    }
+}
+
+@layer components {
+    .gradient-text {
+        background: linear-gradient(180deg, #3273ea 0%, #76f5e6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+    }
+}
+
+@tailwind components;
+@tailwind utilities;

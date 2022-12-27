@@ -1,0 +1,17 @@
+.ant_custom_table {
+    thead > tr > th {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        color: #2c46ad;
+        opacity: 0.7;
+    }
+    th,
+    td {
+        white-space: nowrap;
+        color: #131521;
+    }
+    td {
+        text-transform: capitalize;
+    }
+}

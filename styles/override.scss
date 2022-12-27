@@ -1,0 +1,58 @@
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+.logo {
+    height: 32px;
+    margin: 16px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.after_box {
+    position: relative;
+    z-index: 1;
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        right: -21px;
+        top: -21px;
+        background: #000;
+        border-radius: inherit;
+        z-index: -1;
+    }
+
+    &.top-left::after {
+        right: unset;
+        left: -20px;
+        width: 80%;
+    }
+
+    &.bottom-right::after {
+        top: unset;
+        bottom: -20px;
+        right: -20px;
+        width: 80%;
+    }
+
+    &.animated::after {
+        animation: rotateInDownRight; /* referring directly to the animation's @keyframe declaration */
+        animation-duration: 1s; /* don't forget to set a duration! */
+    }
+
+    @media (max-width: 450px) {
+    }
+}
+
+.section-title {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 100%;
+}
+
+.hero_gradient {
+    background-image: linear-gradient(90deg, #fff 50%, #faf0ef 50%);
+}
