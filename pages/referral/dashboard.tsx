@@ -1,6 +1,6 @@
 import { PageWithLayout } from '@/common/types/interfaces';
 import styled from '@emotion/styled';
-import CopyButton from '@pages/CopyButton';
+import CopyButton from 'components/CopyButton';
 import { Alert, Button, Col, Row, Select } from 'antd';
 import Container from 'components/Container';
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';

@@ -65,3 +65,9 @@ p {
         align-self: flex-end !important;
     }
 }
+
+.ant_image_center {
+    .ant-image {
+        margin: 0 auto;
+    }
+}

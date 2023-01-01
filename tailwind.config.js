@@ -27,6 +27,7 @@ module.exports = {
             },
             fontFamily: {
                 primary: ['DM Sans', 'sans-serif'],
+                euclid: ['Euclid Circular B', 'sans-serif'],
             },
             colors: {
                 primary: '#F15F0D',
