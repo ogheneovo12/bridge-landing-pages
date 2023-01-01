@@ -8,39 +8,12 @@ import TestimonialSection, { generateTestimonialDummy } from 'components/Landing
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
 import Head from 'next/head';
 
-// const ctaList: ICtaCardProps[] = [
-//     {
-//         tag: 'Credit BNPL Access',
-//         title: 'Book now pay later on Bridge',
-//         description: "Need a service but can't pay now? Book Now Pay Later through our financial services partners.",
-//         iconUrl: '/check-set.png',
-//         dropContent: <CheckCard title="Credit Granted" amount="50,000" />,
-//     },
-//     {
-//         tag: 'SECURELY DO BUSSINESS',
-//         title: 'Your money is safely locked in escrow',
-//         description: "Need a service but can't pay now? Book Now Pay Later through our financial services partners.",
-//         iconUrl: '/naira.png',
-//         reverse: false,
-//         dropContent: <CheckCard title="Locked In Escrow" amount="30,550" />,
-//     },
-//     {
-//         tag: 'EASY DIGITAL LIFE',
-//         title: 'Do more with the Bridge app',
-//         description:
-//             'Pay bills, buy airtime, track your service expenses, and get cash-back on all transactions you make on Bridge.',
-//         iconUrl: '/cart-set.png',
-//         dropContent: <NetworkGrid />,
-//     },
-// ];
-
 const ctaList: ICtaCardProps[] = [
     {
         tag: 'Credit BNPL Access',
         title: 'Book now pay later on Bridge',
         description: "Need a service but can't pay now? Book Now Pay Later through our financial services partners.",
         iconUrl: '/booking.png',
-        action_link: '/book-pay',
         dropContent: <CheckCard title="Credit Granted" amount="50,000" />,
     },
     {
@@ -49,16 +22,14 @@ const ctaList: ICtaCardProps[] = [
         description: "Need a service but can't pay now? Book Now Pay Later through our financial services partners.",
         iconUrl: '/escrow.png',
         reverse: false,
-        action_link: '/escrow',
         dropContent: <CheckCard title="Locked In Escrow" amount="30,550" />,
     },
     {
         tag: 'EASY DIGITAL LIFE',
-        title: 'Do more with   the Bridge app',
+        title: 'Do more with the Bridge app',
         description:
             'Pay bills, buy airtime, track your service expenses, and get cash-back on all transactions you make on Bridge.',
         iconUrl: '/doMore.png',
-        action_link: '/domore',
         dropContent: <NetworkGrid />,
     },
 ];
@@ -72,32 +43,14 @@ const Home: PageWithLayout<void> = () => {
             <HeroSection
                 text={{
                     pre: 'Find',
-                    emph: [
-                        'ELECTRICIANS',
-                        'ARTISANS',
-                        'CLEANERS',
-                        'RIDERS',
-                        'TEACHERS',
-                        'TAILORS',
-                        'PLUMBERS',
-                        'PHOTOGRAPHERS',
-                        'PAINTERS',
-                        'MECHANICS',
-                        'MARKETERS',
-                    ],
+                    emph: 'Electricians',
                     end: 'Near You',
-                    className: 'lg:max-w-[500px]',
                 }}
                 subText="Bridge allows you connect with people closest to you with the right skills to meet your demands."
                 imageUrl="/electr.png"
-                imgContainerClassName="after_box max-w-[617px] max-h-[705px]"
-                imgDimension={{
-                    width: 617,
-                    height: 705,
-                }}
                 linkUp={{
                     label: 'SIGNUP AS A SERVICE PROVIDER',
-                    url: '/register',
+                    url: '/#',
                 }}
             />
             <ServiceSection

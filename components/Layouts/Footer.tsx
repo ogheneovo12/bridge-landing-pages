@@ -50,6 +50,10 @@ const links: Record<string, NavLink[]> = {
         {
             label: 'FAQs',
         },
+        {
+            label: 'Ambassadors Programme',
+            href: '/referral',
+        },
     ],
     help: [
         {

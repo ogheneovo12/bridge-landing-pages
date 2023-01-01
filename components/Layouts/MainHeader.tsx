@@ -3,8 +3,11 @@ import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import MenuStyle from './header.styles';
+import cx from 'classnames';
+import { useRouter } from 'next/router';
 
 function MainHeader() {
+    const router = useRouter();
     const ref = useRef<HTMLUListElement>(null);
     const headerRef = useRef<HTMLElement>(null);
     const showMobileMenu = () => {
@@ -55,10 +58,12 @@ function MainHeader() {
         return () => window && window.removeEventListener('scroll', onScroll);
     }, []);
 
+    const styleActiveRoute = (route: string) => (router.pathname === route ? 'text-primary' : '');
+
     return (
         <header
             ref={headerRef}
-            className="flex flex-col justify-center fixed left-0 right-0  w-full top-0 z-[999]   items-center  min-h-[70px] text-white  md:text-secondary animate__fadeInDown animate__animated"
+            className="flex flex-col justify-center absolute left-0 right-0  w-full top-0 z-[999]   items-center  min-h-[70px] text-secondary animate__fadeInDown animate__animated"
         >
             <nav className="nav py-6   container flex justify-between items-center">
                 <div className="flex items-center space-x-3">
@@ -66,46 +71,60 @@ function MainHeader() {
                 </div>
                 <div className="flex items-center">
                     <MenuStyle ref={ref} className="m-0 items-center md:space-x-20 ">
-                        <Button
-                            onClick={hideMobileMenu}
-                            className="md:hidden relative right-0  bg-transparent float-right text-white"
-                        >
-                            <FaTimes />
-                        </Button>
+                        <div className="flex justify-between items-center md:hidden">
+                            <h2 className="font-semibold text-xl">Bridge</h2>
+                            <Button onClick={hideMobileMenu} className="   bg-transparent  text-black">
+                                <FaTimes />
+                            </Button>
+                        </div>
+
                         <li>
-                            <Link href="/#">
+                            <Link href="/">
                                 <span
-                                    className="hover:text-primary font-medium active:text-primary cursor-pointer"
+                                    className={cx(
+                                        'hover:text-primary font-medium active:text-primary cursor-pointer',
+                                        styleActiveRoute('/'),
+                                    )}
+                                    onClick={hideMobileMenu}
+                                >
+                                    HOME
+                                </span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/service-providers">
+                                <span
+                                    className={cx(
+                                        'hover:text-primary font-medium active:text-primary cursor-pointer',
+                                        styleActiveRoute('/service-providers'),
+                                    )}
                                     onClick={hideMobileMenu}
                                 >
                                     SERVICE PROVIDER
                                 </span>
                             </Link>
                         </li>
+
                         <li>
-                            <Link href="/#services">
+                            <Link href="/about-us">
                                 <span
-                                    className="hover:text-primary font-medium active:text-primary cursor-pointer"
+                                    className={cx(
+                                        'hover:text-primary font-medium active:text-primary cursor-pointer',
+                                        styleActiveRoute('/about-us'),
+                                    )}
                                     onClick={hideMobileMenu}
                                 >
-                                    AMBASSADOR PROGRAM
+                                    ABOUT US
                                 </span>
                             </Link>
                         </li>
                         <li>
-                            <Link href="/#projects">
+                            <Link href="/faq">
                                 <span
-                                    className="hover:text-primary font-medium active:text-primary cursor-pointer"
-                                    onClick={hideMobileMenu}
-                                >
-                                    About US
-                                </span>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/#contact">
-                                <span
-                                    className="hover:text-primary font-medium active:text-primary cursor-pointer"
+                                    className={cx(
+                                        'hover:text-primary font-medium active:text-primary cursor-pointer',
+                                        styleActiveRoute('/faq'),
+                                    )}
                                     onClick={hideMobileMenu}
                                 >
                                     {' '}
@@ -113,15 +132,6 @@ function MainHeader() {
                                 </span>
                             </Link>
                         </li>
-                        {/* <li>
-                            <Button
-                                onClick={hideMobileMenu}
-                                href="/#contact"
-                                className="text-white py-0 bg-transparent flex items-center  justify-center border-primary border h-[46px] w-[124px] hover:bg-primary hover:text-white"
-                            >
-                                Hire Me
-                            </Button>
-                        </li> */}
                     </MenuStyle>
                     <Button onClick={showMobileMenu} className="text-secondary md:hidden  bg-transparent">
                         <FaBars />

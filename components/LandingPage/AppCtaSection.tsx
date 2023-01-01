@@ -55,12 +55,12 @@ function AppCtaSection() {
                 </div>
             </div>
             <div className="justify-start items-center flex w-full lg:max-w-[425px]">
-                <div className=" animated w-full max-w-[411px] ">
+                <div className=" animated w-full max-w-[415px] lg:absolute">
                     <Image
                         className="animate__animated wow animate__rotateInUpRight"
                         layout="responsive"
-                        width={411}
-                        height={500}
+                        width={415}
+                        height={615}
                         src="/app_preview.png"
                         alt="app preview"
                     />

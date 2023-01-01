@@ -5,7 +5,7 @@ const MenuStyle = styled.ul`
     @media (max-width: 768px) {
         position: fixed;
         height: 100vh;
-        background-color: #000;
+        background-color: #e9e9e9;
         inset: 0;
         display: block;
         z-index: 99999;
@@ -14,13 +14,11 @@ const MenuStyle = styled.ul`
         clip-path: circle(0 at 100% 0%);
 
         li {
-            padding: 20px;
+            padding: 20px 0px;
 
             a {
                 font-size: 18px;
             }
-
-            border-bottom: 0.5px solid #fff;
         }
 
         &.show {

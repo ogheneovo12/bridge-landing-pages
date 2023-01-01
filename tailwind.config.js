@@ -5,15 +5,16 @@ module.exports = {
         extend: {
             backgroundImage: {
                 'hero-pattern': "url('/bgcirc.png')",
+                'light-hero-pattern': "url('/bgcirc2.png')",
             },
             container: {
                 center: true,
                 padding: {
                     '2xl': '2rem',
                     DEFAULT: '1rem',
-                    lg: '2rem',
                     sm: '1rem',
-                    xl: '3rem',
+                    lg: '2rem',
+                    xl: '0rem',
                 },
             },
             screens: {
@@ -31,6 +32,9 @@ module.exports = {
                 primary: '#F15F0D',
                 secondary: '#000000',
                 para: '#5F6575',
+            },
+            boxShadow: {
+                form: '0px 0px 30px rgba(0, 0, 0, 0.1);',
             },
         },
     },

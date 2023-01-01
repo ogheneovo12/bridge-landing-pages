@@ -9,6 +9,7 @@ import EmailIcon from './EmailIcon.svg';
 import FacebookIcon from './FacebookIcon.svg';
 import TwitterIcon from './TwitterIcon.svg';
 import InstagramIcon from './InstagramIcon.svg';
+import SparkleIcon from './Sparkle.svg';
 
 export {
     BtcIcon,
@@ -22,6 +23,7 @@ export {
     TwitterIcon,
     InstagramIcon,
     EmailIcon,
+    SparkleIcon,
 };
 
 export const coinIconDict: Record<string, any> = {

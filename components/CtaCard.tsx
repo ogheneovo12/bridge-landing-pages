@@ -1,6 +1,17 @@
 import { Image, Tag } from 'antd';
 import { BiChevronRight } from 'react-icons/bi';
 import cx from 'classnames';
+import { SparkleIcon } from 'icons';
+import { ImageProps } from 'antd/lib/image';
+
+export type CtaImageProps = {
+    bg: string; //'/Bridge.png',
+    bgContainerClassName?: string;
+    bgReverseContainerClassName?: string;
+    reverseBg?: string;
+    imageProps: ImageProps;
+};
+
 export interface ICtaCardProps {
     tag: string;
     title: string;
@@ -9,8 +20,34 @@ export interface ICtaCardProps {
     action_link?: string;
     iconUrl: string;
     reverse?: boolean;
+    dropContent?: React.ReactNode;
+    ctaImage?: CtaImageProps;
 }
 
+const DropContent = ({ content, reverse }: { content: React.ReactNode; reverse?: boolean }) => (
+    <div
+        className={cx(
+            'absolute p-4  flex items-center shadow-[0_4px_30px_rgba(0,0,0,0.05)] bg-white -bottom-[24px] min-h-[85px] sm:min-h-[128px] w-full max-w-[263px] rounded-[30px]',
+            reverse ? '-right-9' : '-left-9',
+        )}
+    >
+        <SparkleIcon
+            className={cx('absolute -top-[35px]', reverse ? '-right-[35px]' : '-left-[35px] rotate-[251deg]')}
+        />
+        {content}
+    </div>
+);
+
+const defaultImageProps: CtaImageProps = {
+    bg: '/Bridge.png',
+    bgContainerClassName: 'bg-[#EBBFA7]',
+    imageProps: {
+        sizes: '(max-width: 768px) 171px, 240px',
+        width: 240,
+        height: 264,
+        className: 'animate__animated animate__slow animate__heartBeat animate__infinite',
+    },
+};
 function CtaCard({
     tag,
     title,
@@ -19,11 +56,13 @@ function CtaCard({
     action_text = 'Learn more',
     iconUrl,
     reverse = true,
+    dropContent,
+    ctaImage = defaultImageProps,
 }: ICtaCardProps) {
     return (
         <div
             className={cx(
-                'flex items-center mb-10',
+                'flex items-center mb-10 justify-center max-w-[1110px]',
                 reverse ? 'md:flex-row-reverse flex-col-reverse' : ' flex-col-reverse md:flex-row',
             )}
         >
@@ -42,20 +81,25 @@ function CtaCard({
             </div>
             <div
                 className={cx(
-                    'w-full max-w-[550px  wow animate__animated',
+                    'w-full max-w-[550px]  wow animate__animated flex',
                     reverse ? ' animate__fadeInLeft ' : 'animate__fadeInRight',
                 )}
             >
-                <div className="relative bg-[url(/Bridge.png)] h-[300px] max-w-[300px] md:h-[500px] rounded-[100%] bg-[#EBBFA7] w-full md:max-w-[500px] flex justify-center items-center">
-                    <Image
-                        className="animate__animated animate__slow animate__heartBeat animate__infinite"
-                        preview={false}
-                        width={240}
-                        height={264}
-                        src={iconUrl}
-                        alt="cta icon"
-                    />
-                    <div className="absolute bg-white bottom"></div>
+                <div
+                    style={{
+                        background: reverse ? `url(${ctaImage?.reverseBg || ctaImage?.bg})` : `url(${ctaImage?.bg})`,
+                    }}
+                    className={cx(
+                        'relative  h-[300px]  max-w-[300px] md:h-[500px] rounded-[100%]  w-full md:max-w-[500px] flex justify-center items-center',
+                        ctaImage?.bgContainerClassName,
+                        reverse ? ctaImage?.bgReverseContainerClassName : '',
+                    )}
+                >
+                    <div className="w-full h-full overflow-hidden rounded-[100%] flex justify-center items-center">
+                        <Image preview={false} {...ctaImage?.imageProps} src={iconUrl} alt="cta icon" />
+                    </div>
+
+                    {dropContent && <DropContent reverse={reverse} content={dropContent} />}
                 </div>
             </div>
         </div>

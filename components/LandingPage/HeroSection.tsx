@@ -2,61 +2,136 @@ import React from 'react';
 import Container from 'components/Container';
 import { Button, Divider } from 'antd';
 import Image from 'next/image';
+import cx from 'classnames';
+import Typewriter from 'typewriter-effect';
 
 import playstore from 'images/playstore.png';
 import appstore from 'images/appstore.png';
 import { MouseIcon } from 'icons';
 import { HiArrowRight } from 'react-icons/hi';
+import Link from 'next/link';
 
-function HeroSection() {
+type HeroText = {
+    pre: string;
+    emph: string | string[];
+    end: string;
+    className?: string;
+};
+
+function HeroSection({
+    text,
+    imageUrl,
+    subText,
+    leftSideClassName = 'justify-start ',
+    imgContainerClassName = 'after_box',
+    imgDimension,
+    customAction,
+    linkUp,
+}: {
+    text: HeroText;
+    imageUrl: string;
+    subText?: string;
+    leftSideClassName?: string;
+    imgContainerClassName?: string;
+    imgDimension?: {
+        width: number;
+        height: number;
+    };
+    customAction?: React.ReactNode;
+    linkUp?: {
+        label: string;
+        url?: string;
+    } | null;
+}) {
     return (
-        <Container sectionClass="pt-[140px]  hero_gradient " containerClass="flex justify-between flex-col lg:flex-row">
+        <Container sectionClass="pt-[140px] hero_gradient " containerClass="flex justify-between flex-col lg:flex-row">
             <div className="w-full lg:max-w-[50%]">
-                <h1 className="animate__fadeInUp  animate__animated text-left text-[32px] sm:text-[40px] sm:leading-[44px] md:text-[70px] font-extrabold md:leading-[75.6px]">
-                    Find <span className="text-primary">Electricians</span> | near you.
+                <h1
+                    className={cx(
+                        'animate__fadeInUp  animate__animated text-left text-[32px] sm:text-[40px] sm:leading-[44px] md:text-[70px] font-extrabold md:leading-[75.6px] ',
+                        text.className,
+                    )}
+                >
+                    {text.pre}{' '}
+                    {Array.isArray(text.emph) ? (
+                        <Typewriter
+                            // onInit={(typewriter) => {
+                            //     typewriter
+                            //         .typeString(text.emph)
+                            //         .callFunction(() => {
+                            //             console.log('String typed out!');
+                            //         })
+                            //         .pauseFor(2500)
+                            //         .deleteAll()
+                            //         .callFunction(() => {
+                            //             console.log('All strings were deleted');
+                            //         })
+                            //         .start();
+                            // }}
+                            options={{
+                                strings: text.emph,
+                                autoStart: true,
+                                loop: true,
+                                wrapperClassName: 'text-primary',
+                            }}
+                        />
+                    ) : (
+                        <span className="text-primary">{text?.emph}</span>
+                    )}{' '}
+                    {text.end}.
                 </h1>
 
                 <p className="animation-delay-1000 animate__fadeInUp  animate__animated text-left text-para text-lg  leading-[30px] max-w-[465px] mt-5 md:mt-10 mb-10">
-                    Bridge allows you connect with people closest to you with the right skills to meet your demands.
+                    {subText}
                 </p>
                 <div className=" animation-delay-2000 animate__fadeInUp animate__animated  space-x-6 flex items-center justify-center md:justify-start">
-                    <Button
-                        icon={<Image src={appstore} width={23} height={28} alt={'app store button'} />}
-                        href="/#services"
-                        className="space-x-2  flex items-center justify-center py-0 max-w-[186px] w-full h-[56px]  bg-secondary text-white hover:bg-primary hover:text-white"
-                    >
-                        <span className="leading-[10px]">
-                            <small className="block opacity-90 mb-[2px]">Available on</small>
-                            App Store
-                        </span>
-                    </Button>
-                    <Button
-                        icon={<Image src={playstore} width={23} height={28} alt={'app store button'} />}
-                        href="https://drive.google.com/uc?export=download&id=1dref-Gwx0TBBkUQ8HgaiVutUZTc-MJaX"
-                        className="space-x-2 flex items-center justify-center py-0 h-[56px] max-w-[186px] w-full text-white bg-secondary"
-                    >
-                        <span className="leading-[10px]">
-                            <small className="block opacity-90 mb-[2px]">Available on</small>
-                            Play Store
-                        </span>
-                    </Button>
+                    {customAction ? (
+                        customAction
+                    ) : (
+                        <>
+                            <Button
+                                icon={<Image src={appstore} width={23} height={28} alt={'app store button'} />}
+                                href="/#services"
+                                className="rounded-[17px] space-x-2  flex items-center justify-center py-0 max-w-[186px] w-full h-[56px]  bg-secondary text-white hover:bg-primary hover:text-white"
+                            >
+                                <span className="leading-[10px]">
+                                    <small className="block opacity-90 mb-[2px]">Available on</small>
+                                    App Store
+                                </span>
+                            </Button>
+                            <Button
+                                icon={<Image src={playstore} width={23} height={28} alt={'app store button'} />}
+                                href="https://drive.google.com/uc?export=download&id=1dref-Gwx0TBBkUQ8HgaiVutUZTc-MJaX"
+                                className="rounded-[17px] space-x-2 flex items-center justify-center py-0 h-[56px] max-w-[186px] w-full text-white bg-secondary"
+                            >
+                                <span className="leading-[10px]">
+                                    <small className="block opacity-90 mb-[2px]">Available on</small>
+                                    Play Store
+                                </span>
+                            </Button>
+                        </>
+                    )}
                 </div>
                 <div className="flex items-center">
                     <MouseIcon className="animate__animated animate__bounce animate__slow animate__infinite	" />
                     <Divider className="h-[84px] my-10" orientation="center" type="vertical" />
-                    <a className="text-base flex items-center  text-secondary font-bold hover:text-primary">
-                        SIGNUP AS A SERVICE PROVIDER <HiArrowRight className="ml-2" />
-                    </a>
+                    {linkUp ? (
+                        <Link href={linkUp?.url || '#'} passHref>
+                            <a className="text-base    text-secondary font-bold hover:text-primary">
+                                {linkUp.label} <HiArrowRight className="ml-2 inline-block" />
+                            </a>
+                        </Link>
+                    ) : null}
                 </div>
             </div>
-            <div className="justify-start items-center flex w-full lg:max-w-[50%]">
-                <div className="after_box animated w-full max-w-[411px] ">
+            <div className={cx('items-center flex w-full lg:max-w-[50%]', leftSideClassName)}>
+                <div className={cx('animated w-full', imgContainerClassName)}>
                     <Image
                         className="animate__animated wow animate__rotateInUpRight"
                         layout="responsive"
-                        width={411}
-                        height={500}
-                        src="/electr.png"
+                        width={imgDimension?.width || 411}
+                        height={imgDimension?.height || 500}
+                        src={imageUrl}
                         alt="ukuanovwe ovo avatar"
                     />
                 </div>
