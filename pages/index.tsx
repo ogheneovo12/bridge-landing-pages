@@ -8,32 +8,6 @@ import TestimonialSection, { generateTestimonialDummy } from 'components/Landing
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
 import Head from 'next/head';
 
-// const ctaList: ICtaCardProps[] = [
-//     {
-//         tag: 'Credit BNPL Access',
-//         title: 'Book now pay later on Bridge',
-//         description: "Need a service but can't pay now? Book Now Pay Later through our financial services partners.",
-//         iconUrl: '/check-set.png',
-//         dropContent: <CheckCard title="Credit Granted" amount="50,000" />,
-//     },
-//     {
-//         tag: 'SECURELY DO BUSSINESS',
-//         title: 'Your money is safely locked in escrow',
-//         description: "Need a service but can't pay now? Book Now Pay Later through our financial services partners.",
-//         iconUrl: '/naira.png',
-//         reverse: false,
-//         dropContent: <CheckCard title="Locked In Escrow" amount="30,550" />,
-//     },
-//     {
-//         tag: 'EASY DIGITAL LIFE',
-//         title: 'Do more with the Bridge app',
-//         description:
-//             'Pay bills, buy airtime, track your service expenses, and get cash-back on all transactions you make on Bridge.',
-//         iconUrl: '/cart-set.png',
-//         dropContent: <NetworkGrid />,
-//     },
-// ];
-
 const ctaList: ICtaCardProps[] = [
     {
         tag: 'Credit BNPL Access',

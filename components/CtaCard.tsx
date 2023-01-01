@@ -5,7 +5,7 @@ import { SparkleIcon } from 'icons';
 import { ImageProps } from 'antd/lib/image';
 
 export type CtaImageProps = {
-    bg: string; //'/Bridge.png',
+    bg: string;
     bgContainerClassName?: string;
     bgReverseContainerClassName?: string;
     reverseBg?: string;

@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
     content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
     theme: {
@@ -35,7 +34,7 @@ module.exports = {
                 para: '#5F6575',
             },
             boxShadow: {
-                form: '0px 0px 30px rgba(0, 0, 0, 0.1);',
+                form: '0px 0px 30px rgba(0, 0, 0, 0.1)',
             },
         },
     },

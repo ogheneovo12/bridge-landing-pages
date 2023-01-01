@@ -55,19 +55,6 @@ function HeroSection({
                     {text.pre}{' '}
                     {Array.isArray(text.emph) ? (
                         <Typewriter
-                            // onInit={(typewriter) => {
-                            //     typewriter
-                            //         .typeString(text.emph)
-                            //         .callFunction(() => {
-                            //             console.log('String typed out!');
-                            //         })
-                            //         .pauseFor(2500)
-                            //         .deleteAll()
-                            //         .callFunction(() => {
-                            //             console.log('All strings were deleted');
-                            //         })
-                            //         .start();
-                            // }}
                             options={{
                                 strings: text.emph,
                                 autoStart: true,

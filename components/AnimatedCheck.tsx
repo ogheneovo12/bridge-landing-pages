@@ -10,10 +10,7 @@ const brandSuccess = '#fff',
     checkColor = brandSuccess;
 
 const CircleLoader = styled.div`
-    /* border: 1px solid rgba(0, 0, 0, 0.2);
-    border-left-color: ${checkColor}; */
     background-color: #11a186;
-    /* animation: loader-spin 1.2s infinite linear; */
     position: relative;
     display: inline-block;
     vertical-align: top;
