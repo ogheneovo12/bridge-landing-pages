@@ -95,7 +95,7 @@ function CtaCard({
                         background: reverse ? `url(${ctaImage?.reverseBg || ctaImage?.bg})` : `url(${ctaImage?.bg})`,
                     }}
                     className={cx(
-                        'relative  h-[300px]  max-w-[300px] md:h-[500px] rounded-[100%]  w-full md:max-w-[500px] flex justify-center items-center',
+                        'relative  h-[335px]  max-w-[335px] md:h-[500px] bg-contain rounded-[100%]  w-full md:max-w-[500px] flex justify-center items-center',
                         ctaImage?.bgContainerClassName,
                         reverse ? ctaImage?.bgReverseContainerClassName : '',
                     )}

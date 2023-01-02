@@ -69,6 +69,9 @@ const Home: PageWithLayout<void> = () => {
                     imageContainerClassName: css`
                         & > span {
                             margin-bottom: -40px !important;
+                            @media (max-width: 640px) {
+                                width: 228px !important;
+                            }
                         }
                     `,
                     imageProps: {
