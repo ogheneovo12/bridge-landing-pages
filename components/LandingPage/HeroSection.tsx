@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from 'components/Container';
 import { Button, Divider } from 'antd';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import cx from 'classnames';
 import Typewriter from 'typewriter-effect';
 
@@ -29,7 +29,7 @@ function HeroSection({
     linkUp,
 }: {
     text: HeroText;
-    imageUrl: string;
+    imageUrl: string | StaticImageData;
     subText?: string;
     leftSideClassName?: string;
     imgContainerClassName?: string;

@@ -3,8 +3,11 @@ import { Card, Col, Image as AntImage, Row } from 'antd';
 import Container from 'components/Container';
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
 import Head from 'next/head';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { v4 } from 'uuid';
+import cover1 from 'images/cover1.png';
+import cover2 from 'images/cover2.png';
+import cover from 'images/cover.png';
 
 const StatsBox = ({ count, label }: { count: string; label: string }) => (
     <div className="p-4 md:p-8">
@@ -14,7 +17,7 @@ const StatsBox = ({ count, label }: { count: string; label: string }) => (
 );
 
 export interface ITeamCardProps {
-    team_img: string;
+    team_img: string | StaticImageData;
     name: string;
     role: string;
 }
@@ -31,47 +34,47 @@ const TeamCard = ({ team_img, name, role }: ITeamCardProps) => (
 
 const teams: ITeamCardProps[] = [
     {
-        team_img: '/cover.png',
+        team_img: cover,
         name: 'Full Name',
         role: 'role',
     },
     {
-        team_img: '/cover1.png',
+        team_img: cover1,
         name: 'Full Name',
         role: 'role',
     },
     {
-        team_img: '/cover2.png',
+        team_img: cover2,
         name: 'Full Name',
         role: 'role',
     },
     {
-        team_img: '/cover.png',
+        team_img: cover,
         name: 'Full Name',
         role: 'role',
     },
     {
-        team_img: '/cover1.png',
+        team_img: cover1,
         name: 'Full Name',
         role: 'role',
     },
     {
-        team_img: '/cover2.png',
+        team_img: cover2,
         name: 'Full Name',
         role: 'role',
     },
     {
-        team_img: '/cover.png',
+        team_img: cover,
         name: 'Full Name',
         role: 'role',
     },
     {
-        team_img: '/cover1.png',
+        team_img: cover1,
         name: 'Full Name',
         role: 'role',
     },
     {
-        team_img: '/cover2.png',
+        team_img: cover2,
         name: 'Full Name',
         role: 'role',
     },

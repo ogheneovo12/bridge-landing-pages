@@ -7,13 +7,17 @@ import ServiceSection, { app_steps } from 'components/LandingPage/ServiceSection
 import TestimonialSection, { generateTestimonialDummy } from 'components/LandingPage/TestimonialSection';
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
 import Head from 'next/head';
+import hero_img from 'images/hero3.png';
+import smart_img from 'images/smart.png';
+import financial_img from 'images/financial.png';
+import { css } from '@emotion/css';
 
 const ctaList: ICtaCardProps[] = [
     {
         tag: 'FINANCIAL SERVICES',
         title: 'Scale up with our financial services',
         description: 'Gain access to credit, investments, pensions, all made available through our fintech partners.',
-        iconUrl: '/financial.png',
+        iconUrl: financial_img,
         dropContent: <CheckCard title="Credit Granted" amount="65,000" />,
         action_link: '/finance',
     },
@@ -22,7 +26,7 @@ const ctaList: ICtaCardProps[] = [
         title: 'Work smart, save time & stress',
         description:
             'Track your bussiness performance, send invoices, set appointments, access tools to scale your business.',
-        iconUrl: '/smart.png',
+        iconUrl: smart_img,
         reverse: false,
         dropContent: <CheckCard title="Payment Received" amount="57,000" />,
         action_link: '/smart',
@@ -42,13 +46,9 @@ const Home: PageWithLayout<void> = () => {
                     end: '10x your earnings',
                 }}
                 subText="Bridge allows you connect with people closest to you with the right skills to meet your demands."
-                imageUrl="/hero3.png"
+                imageUrl={hero_img}
                 leftSideClassName="justify-center bg-[url(/bgblob.png)] bg-no-repeat bg-center bg-contain"
                 imgContainerClassName="max-w-[578px] max-h-[744px]"
-                imgDimension={{
-                    width: 578,
-                    height: 744,
-                }}
                 linkUp={{
                     label: 'SIGNUP AS A CLIENT',
                     url: '/register',
@@ -66,9 +66,12 @@ const Home: PageWithLayout<void> = () => {
                     reverseBg: '/bgColoredLeft.png',
                     bgContainerClassName: 'bg-white bg-no-repeat bg-right ant_image_end',
                     bgReverseContainerClassName: 'bg-left',
+                    imageContainerClassName: css`
+                        & > span {
+                            margin-bottom: -40px !important;
+                        }
+                    `,
                     imageProps: {
-                        width: '340px',
-                        height: '400px',
                         className: 'animate__bounceInUp animate__animated wow',
                     },
                 }}

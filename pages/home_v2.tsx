@@ -7,20 +7,25 @@ import ServiceSection, { app_steps } from 'components/LandingPage/ServiceSection
 import TestimonialSection, { generateTestimonialDummy } from 'components/LandingPage/TestimonialSection';
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
 import Head from 'next/head';
+import hero_img from 'images/electr.png';
+import escrow_img from 'images/escrow.png';
+import domore_img from 'images/doMore.png';
+import booking_img from 'images/booking.png';
+//import smart_img from 'images/smart.png';
 
 const ctaList: ICtaCardProps[] = [
     {
         tag: 'Credit BNPL Access',
         title: 'Book now pay later on Bridge',
         description: "Need a service but can't pay now? Book Now Pay Later through our financial services partners.",
-        iconUrl: '/booking.png',
+        iconUrl: booking_img,
         dropContent: <CheckCard title="Credit Granted" amount="50,000" />,
     },
     {
         tag: 'SECURELY DO BUSSINESS',
         title: 'Your money is safely locked in escrow',
         description: "Need a service but can't pay now? Book Now Pay Later through our financial services partners.",
-        iconUrl: '/escrow.png',
+        iconUrl: escrow_img,
         reverse: false,
         dropContent: <CheckCard title="Locked In Escrow" amount="30,550" />,
     },
@@ -29,7 +34,7 @@ const ctaList: ICtaCardProps[] = [
         title: 'Do more with the Bridge app',
         description:
             'Pay bills, buy airtime, track your service expenses, and get cash-back on all transactions you make on Bridge.',
-        iconUrl: '/doMore.png',
+        iconUrl: domore_img,
         dropContent: <NetworkGrid />,
     },
 ];
@@ -47,7 +52,7 @@ const Home: PageWithLayout<void> = () => {
                     end: 'Near You',
                 }}
                 subText="Bridge allows you connect with people closest to you with the right skills to meet your demands."
-                imageUrl="/electr.png"
+                imageUrl={hero_img}
                 linkUp={{
                     label: 'SIGNUP AS A SERVICE PROVIDER',
                     url: '/#',
@@ -66,9 +71,7 @@ const Home: PageWithLayout<void> = () => {
                     bgContainerClassName: 'bg-white bg-no-repeat bg-right ant_image_end',
                     bgReverseContainerClassName: 'bg-left',
                     imageProps: {
-                        width: '340px',
-                        height: '400px',
-                        className: 'animate__bounceInUp animate__animated wow',
+                        className: 'animate__bounceInUp animate__animated wow -mb-[30px]',
                     },
                 }}
             />

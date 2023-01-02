@@ -1,15 +1,17 @@
-import { Image, Tag } from 'antd';
+import { Tag } from 'antd';
 import { BiChevronRight } from 'react-icons/bi';
 import cx from 'classnames';
 import { SparkleIcon } from 'icons';
-import { ImageProps } from 'antd/lib/image';
+import Image, { ImageProps, StaticImageData } from 'next/image';
+import Link from 'next/link';
 
 export type CtaImageProps = {
     bg: string;
     bgContainerClassName?: string;
     bgReverseContainerClassName?: string;
+    imageContainerClassName?: string;
     reverseBg?: string;
-    imageProps: ImageProps;
+    imageProps: Omit<ImageProps, 'src'>;
 };
 
 export interface ICtaCardProps {
@@ -18,7 +20,7 @@ export interface ICtaCardProps {
     description: string;
     action_text?: string;
     action_link?: string;
-    iconUrl: string;
+    iconUrl: string | StaticImageData;
     reverse?: boolean;
     dropContent?: React.ReactNode;
     ctaImage?: CtaImageProps;
@@ -41,6 +43,7 @@ const DropContent = ({ content, reverse }: { content: React.ReactNode; reverse?:
 const defaultImageProps: CtaImageProps = {
     bg: '/Bridge.png',
     bgContainerClassName: 'bg-[#EBBFA7]',
+    imageContainerClassName: '',
     imageProps: {
         sizes: '(max-width: 768px) 171px, 240px',
         width: 240,
@@ -75,9 +78,11 @@ function CtaCard({
                 <Tag className="bg-white text-transform uppercase tracking-[2px] rounded-md">{tag}</Tag>
                 <h2 className=" text-[28px] leading-[36px] md:text-[56px] mt-6 font-bold md:leading-[68px]">{title}</h2>
                 <p className="text-para text-lg max-w-[525px] my-5">{description}</p>
-                <a href={action_link} className="text-primary font-bold text-lg flex items-center">
-                    {action_text} <BiChevronRight />
-                </a>
+                <Link href={action_link || '#'} passHref>
+                    <a className="text-primary font-bold text-lg flex items-center">
+                        {action_text} <BiChevronRight />
+                    </a>
+                </Link>
             </div>
             <div
                 className={cx(
@@ -95,8 +100,13 @@ function CtaCard({
                         reverse ? ctaImage?.bgReverseContainerClassName : '',
                     )}
                 >
-                    <div className="w-full h-full overflow-hidden rounded-[100%] flex justify-center items-center">
-                        <Image preview={false} {...ctaImage?.imageProps} src={iconUrl} alt="cta icon" />
+                    <div
+                        className={cx(
+                            'w-full h-full overflow-hidden rounded-[100%] flex justify-center items-center',
+                            ctaImage.imageContainerClassName,
+                        )}
+                    >
+                        <Image {...ctaImage?.imageProps} src={iconUrl} alt="cta icon" />
                     </div>
 
                     {dropContent && <DropContent reverse={reverse} content={dropContent} />}

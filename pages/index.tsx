@@ -8,12 +8,18 @@ import TestimonialSection, { generateTestimonialDummy } from 'components/Landing
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
 import Head from 'next/head';
 
+import hero_img from 'images/electr.png';
+import escrow_img from 'images/escrow.png';
+import domore_img from 'images/doMore.png';
+import booking_img from 'images/booking.png';
+import { css } from '@emotion/css';
+
 const ctaList: ICtaCardProps[] = [
     {
         tag: 'Credit BNPL Access',
         title: 'Book now pay later on Bridge',
         description: "Need a service but can't pay now? Book Now Pay Later through our financial services partners.",
-        iconUrl: '/booking.png',
+        iconUrl: booking_img,
         action_link: '/book-pay',
         dropContent: <CheckCard title="Credit Granted" amount="50,000" />,
     },
@@ -21,7 +27,7 @@ const ctaList: ICtaCardProps[] = [
         tag: 'SECURELY DO BUSSINESS',
         title: 'Your money is safely locked in escrow',
         description: "Need a service but can't pay now? Book Now Pay Later through our financial services partners.",
-        iconUrl: '/escrow.png',
+        iconUrl: escrow_img,
         reverse: false,
         action_link: '/escrow',
         dropContent: <CheckCard title="Locked In Escrow" amount="30,550" />,
@@ -31,7 +37,7 @@ const ctaList: ICtaCardProps[] = [
         title: 'Do more with   the Bridge app',
         description:
             'Pay bills, buy airtime, track your service expenses, and get cash-back on all transactions you make on Bridge.',
-        iconUrl: '/doMore.png',
+        iconUrl: domore_img,
         action_link: '/domore',
         dropContent: <NetworkGrid />,
     },
@@ -63,7 +69,7 @@ const Home: PageWithLayout<void> = () => {
                     className: 'lg:max-w-[500px]',
                 }}
                 subText="Bridge allows you connect with people closest to you with the right skills to meet your demands."
-                imageUrl="/electr.png"
+                imageUrl={hero_img}
                 imgContainerClassName="after_box max-w-[617px] max-h-[705px]"
                 imgDimension={{
                     width: 617,
@@ -86,10 +92,13 @@ const Home: PageWithLayout<void> = () => {
                     reverseBg: '/bgColoredLeft.png',
                     bgContainerClassName: 'bg-white bg-no-repeat bg-right ant_image_end',
                     bgReverseContainerClassName: 'bg-left',
+                    imageContainerClassName: css`
+                        & > span {
+                            margin-bottom: -40px !important;
+                        }
+                    `,
                     imageProps: {
-                        width: '340px',
-                        height: '400px',
-                        className: 'animate__bounceInUp animate__animated wow',
+                        className: 'animate__bounceInUp animate__animated wow -mb-[30px]',
                     },
                 }}
             />
@@ -97,6 +106,7 @@ const Home: PageWithLayout<void> = () => {
                 title="What clients are saying..."
                 testimonials={generateTestimonialDummy('David olaniyan', '/david.png')}
             />
+
             <AppCtaSection />
         </>
     );

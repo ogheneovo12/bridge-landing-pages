@@ -4,6 +4,7 @@ import Image from 'next/image';
 import React from 'react';
 import playstore from 'images/playstore.png';
 import appstore from 'images/appstore.png';
+import app_preview from 'images/app_preview.png';
 
 function AppCtaSection() {
     return (
@@ -59,9 +60,7 @@ function AppCtaSection() {
                     <Image
                         className="animate__animated wow animate__rotateInUpRight"
                         layout="responsive"
-                        width={415}
-                        height={615}
-                        src="/app_preview.png"
+                        src={app_preview}
                         alt="app preview"
                     />
                 </div>

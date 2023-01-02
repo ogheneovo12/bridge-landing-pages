@@ -4,6 +4,7 @@ import HeroSection from 'components/LandingPage/HeroSection';
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import hero_img from 'images/image15.png';
 
 const ReferralPage: PageWithLayout<void> = () => {
     const router = useRouter();
@@ -19,12 +20,8 @@ const ReferralPage: PageWithLayout<void> = () => {
                     end: 'inviting friends',
                 }}
                 subText="Do you already tell your friends about Bridge? Well, it is time to get rewarded."
-                imageUrl="/image15.png"
+                imageUrl={hero_img}
                 imgContainerClassName="after_box max-w-[617px] max-h-[705px]"
-                imgDimension={{
-                    width: 617,
-                    height: 705,
-                }}
                 linkUp={{
                     label: 'Already have an account? Sign In',
                     url: '/login',

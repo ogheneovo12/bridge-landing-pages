@@ -9,6 +9,7 @@ import TestimonialSection, { generateTestimonialDummy } from 'components/Landing
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
 import { ISquareCtaCardProps } from 'components/SquareCtaCard';
 import Head from 'next/head';
+import hero_img from 'images/smart_hero.png';
 
 const DummyContent = () => (
     <>
@@ -83,12 +84,12 @@ const Home: PageWithLayout<void> = () => {
                     className: 'lg:max-w-[500px]',
                 }}
                 subText="Bridge allows you connect with people closest to you with the right skills to meet your demands."
-                imageUrl="/smart_hero.png"
+                imageUrl={hero_img}
                 leftSideClassName="justify-center bg-no-repeat bg-center bg-contain"
-                imgContainerClassName="bg-[#F8F8F8] lg:-ml-32 max-w-[708px] max-h-[669px]"
+                imgContainerClassName="bg-[#F8F8F8] lg:-ml-32 max-w-[708px] max-h-[660px]"
                 imgDimension={{
                     width: 708,
-                    height: 669,
+                    height: 660,
                 }}
             />
             <ServiceSection

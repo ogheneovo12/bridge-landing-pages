@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
+    "@emotion/css": "^11.10.5",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@sendgrid/mail": "^7.7.0",
