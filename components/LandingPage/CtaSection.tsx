@@ -3,16 +3,16 @@ import CtaCard, { CtaImageProps, ICtaCardProps } from 'components/CtaCard';
 import Container from 'components/Container';
 import { v4 } from 'uuid';
 import AnimatedCheck from 'components/AnimatedCheck';
-import nineMobile from 'images/9mobile.png';
-import ikejaEl from 'images/ikeja.png';
-import mtn from 'images/mtn.png';
-import dstv from 'images/dstv.png';
-import glo from 'images/glo.png';
-import airtel from 'images/airtel.png';
-import gotv from 'images/gotv.png';
+import nineMobile from 'images/partners/9mobile.png';
+import ikejaEl from 'images/partners/ikeja.png';
+import mtn from 'images/partners/mtn.png';
+import dstv from 'images/partners/dstv.png';
+import glo from 'images/partners/glo.png';
+import airtel from 'images/partners/airtel.png';
+import gotv from 'images/partners/gotv.png';
 import { Col, Row } from 'antd';
 import Image from 'next/image';
-import startimes from 'images/startimes.png';
+import startimes from 'images/partners/startimes.png';
 import SquareCtaCard, { ISquareCtaCardProps } from 'components/SquareCtaCard';
 
 export const networks = [mtn, glo, airtel, nineMobile, dstv, gotv, startimes, ikejaEl];
@@ -31,7 +31,7 @@ export const NetworkGrid = () => (
     <Row gutter={[8, 8]}>
         {networks?.map((netimg) => (
             <Col key={v4()} span={6}>
-                <div className="h-[37px] w-[37px] rounded-[100%] bg-white shadow-[0_1.03798px_6.99596px_rgba(0,0,0,0.25)]">
+                <div className="h-[37px] p-[5px] w-[37px] flex items-center justify-center rounded-[100%] bg-white shadow-[0_1.03798px_6.99596px_rgba(0,0,0,0.25)]">
                     <Image objectFit="contain" quality={100} width={37} height={37} src={netimg} alt="Network Imahe" />
                 </div>
             </Col>

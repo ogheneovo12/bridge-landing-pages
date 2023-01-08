@@ -5,9 +5,9 @@ import HomeLayout from 'components/Layouts/HomeLayout.layouts';
 import Head from 'next/head';
 import Image, { StaticImageData } from 'next/image';
 import { v4 } from 'uuid';
-import cover1 from 'images/cover1.png';
-import cover2 from 'images/cover2.png';
-import cover from 'images/cover.png';
+import cover1 from 'images/team/cover1.png';
+import cover2 from 'images/team/cover2.png';
+import cover from 'images/team/cover.png';
 
 const StatsBox = ({ count, label }: { count: string; label: string }) => (
     <div className="p-4 md:p-8">

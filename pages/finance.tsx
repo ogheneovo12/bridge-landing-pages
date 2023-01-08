@@ -9,7 +9,7 @@ import TestimonialSection, { generateTestimonialDummy } from 'components/Landing
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
 import { ISquareCtaCardProps } from 'components/SquareCtaCard';
 import Head from 'next/head';
-import hero_img from 'images/finance_hero.png';
+import hero_img from 'images/hero/finance_hero.png';
 
 const DummyContent = () => (
     <>

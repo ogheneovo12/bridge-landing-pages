@@ -8,10 +8,10 @@ import TestimonialSection, { generateTestimonialDummy } from 'components/Landing
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
 import Head from 'next/head';
 
-import hero_img from 'images/electr.png';
-import escrow_img from 'images/escrow.png';
-import domore_img from 'images/doMore.png';
-import booking_img from 'images/booking.png';
+import hero_img from 'images/services/ELECTRICIANS.jpg';
+import escrow_img from 'images/cta/escrow.png';
+import domore_img from 'images/cta/doMore.png';
+import booking_img from 'images/cta/booking.png';
 import { css } from '@emotion/css';
 
 const ctaList: ICtaCardProps[] = [
@@ -43,6 +43,20 @@ const ctaList: ICtaCardProps[] = [
     },
 ];
 
+const heroTextsToImages = {
+    Electricians: '/ELECTRICIANS.jpg',
+    Artisans: '/ARTISANS.jpg',
+    Cleaners: '/CLEANERS.jpg',
+    Riders: '/DISPATCHRIDERS.jpg',
+    Teachers: '/TEACHERS.png',
+    Tailors: '/TAILORS.png',
+    Plumbers: '/PLUMBERS.jpg',
+    Photographers: '/PHOTOGRAPHERS.jpg',
+    Painters: '/PAINTERS.jpg',
+    Mechanics: '/MECHANICS.jpg',
+    Marketers: '/MARKETERS.jpg',
+};
+
 const Home: PageWithLayout<void> = () => {
     return (
         <>
@@ -52,19 +66,8 @@ const Home: PageWithLayout<void> = () => {
             <HeroSection
                 text={{
                     pre: 'Find',
-                    emph: [
-                        'ELECTRICIANS',
-                        'ARTISANS',
-                        'CLEANERS',
-                        'RIDERS',
-                        'TEACHERS',
-                        'TAILORS',
-                        'PLUMBERS',
-                        'PHOTOGRAPHERS',
-                        'PAINTERS',
-                        'MECHANICS',
-                        'MARKETERS',
-                    ],
+                    emph: Object.keys(heroTextsToImages),
+                    images: Object.values(heroTextsToImages)?.map((imagePath) => `/services${imagePath}`),
                     end: 'Near You',
                     className: 'lg:max-w-[500px]',
                 }}

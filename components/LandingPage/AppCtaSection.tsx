@@ -2,9 +2,9 @@ import { Button } from 'antd';
 import Container from 'components/Container';
 import Image from 'next/image';
 import React from 'react';
-import playstore from 'images/playstore.png';
-import appstore from 'images/appstore.png';
-import app_preview from 'images/app_preview.png';
+import playstore from 'images/app/playstore.png';
+import appstore from 'images/app/appstore.png';
+import app_preview from 'images/app/app_preview.png';
 
 function AppCtaSection() {
     return (

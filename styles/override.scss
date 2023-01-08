@@ -71,3 +71,9 @@ p {
         margin: 0 auto;
     }
 }
+
+.animate_next_image {
+    img {
+        animation: fadeIn;
+    }
+}

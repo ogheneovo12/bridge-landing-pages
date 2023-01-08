@@ -3,10 +3,10 @@ import Container from 'components/Container';
 import { Button, Divider } from 'antd';
 import Image, { StaticImageData } from 'next/image';
 import cx from 'classnames';
-import Typewriter from 'typewriter-effect';
+import Typewriter, { TypewriterClass } from 'typewriter-effect';
 
-import playstore from 'images/playstore.png';
-import appstore from 'images/appstore.png';
+import playstore from 'images/app/playstore.png';
+import appstore from 'images/app/appstore.png';
 import { MouseIcon } from 'icons';
 import { HiArrowRight } from 'react-icons/hi';
 import Link from 'next/link';
@@ -15,6 +15,7 @@ type HeroText = {
     pre: string;
     emph: string | string[];
     end: string;
+    images?: string[] | StaticImageData[];
     className?: string;
 };
 
@@ -43,6 +44,40 @@ function HeroSection({
         url?: string;
     } | null;
 }) {
+    const [typeWriter, setTypeWriter] = React.useState<TypewriterClass | null>(null);
+    const [typeIndex, setTypeIndex] = React.useState(0);
+    const containerRef = React.useRef<HTMLDivElement | null>(null);
+
+    const incrementTypeIndex = React.useCallback(() => {
+        if (typeIndex <= text?.emph?.length - 1) {
+            setTypeIndex(typeIndex + 1);
+        } else {
+            setTypeIndex(0);
+        }
+    }, [typeIndex, text?.emph?.length]);
+
+    React.useEffect(() => {
+        if (typeWriter && Array.isArray(text.emph)) {
+            typeWriter
+                .typeString(text.emph[typeIndex])
+                .pauseFor(2500)
+                .callFunction(() => {
+                    console.log('String typed out!');
+                    if (containerRef.current) {
+                        containerRef.current.classList.remove('animate__flipInY');
+                    }
+                })
+                .deleteAll()
+                .callFunction(() => {
+                    incrementTypeIndex();
+                    if (containerRef.current) {
+                        containerRef.current.classList.add('animate__flipInY');
+                    }
+                })
+                .start();
+        }
+    }, [text.emph, typeWriter, typeIndex, incrementTypeIndex]);
+
     return (
         <Container sectionClass="pt-[140px] hero_gradient " containerClass="flex justify-between flex-col lg:flex-row">
             <div className="w-full lg:max-w-[50%]">
@@ -55,10 +90,8 @@ function HeroSection({
                     {text.pre}{' '}
                     {Array.isArray(text.emph) ? (
                         <Typewriter
+                            onInit={(typw) => setTypeWriter(typw)}
                             options={{
-                                strings: text.emph,
-                                autoStart: true,
-                                loop: true,
                                 wrapperClassName: 'text-primary',
                             }}
                         />
@@ -112,13 +145,16 @@ function HeroSection({
                 </div>
             </div>
             <div className={cx('items-center flex w-full lg:max-w-[50%]', leftSideClassName)}>
-                <div className={cx('animated w-full', imgContainerClassName)}>
+                <div
+                    ref={containerRef}
+                    className={cx('animated animate__slow  animate__animated w-full', imgContainerClassName)}
+                >
                     <Image
-                        className="animate__animated wow animate__rotateInUpRight"
+                        className="animate__animated wow animate__rotateInUpRight "
                         layout="responsive"
                         width={imgDimension?.width || 411}
                         height={imgDimension?.height || 500}
-                        src={imageUrl}
+                        src={Array.isArray(text.images) ? text.images[typeIndex] : imageUrl}
                         alt="ukuanovwe ovo avatar"
                     />
                 </div>
