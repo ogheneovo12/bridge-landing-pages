@@ -69,10 +69,10 @@ function HeroSection({
                 })
                 .deleteAll()
                 .callFunction(() => {
-                    incrementTypeIndex();
                     if (containerRef.current) {
                         containerRef.current.classList.add('animate__flipInY');
                     }
+                    incrementTypeIndex();
                 })
                 .start();
         }
