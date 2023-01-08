@@ -49,7 +49,7 @@ function HeroSection({
     const containerRef = React.useRef<HTMLDivElement | null>(null);
 
     const incrementTypeIndex = React.useCallback(() => {
-        if (typeIndex <= text?.emph?.length - 1) {
+        if (typeIndex < text?.emph?.length - 1) {
             setTypeIndex(typeIndex + 1);
         } else {
             setTypeIndex(0);
