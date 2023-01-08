@@ -9,7 +9,7 @@ import TestimonialSection, { generateTestimonialDummy } from 'components/Landing
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
 import { ISquareCtaCardProps } from 'components/SquareCtaCard';
 import Head from 'next/head';
-import hero_img from 'images/hero/smart_hero.png';
+import hero_img from 'images/hero/smart-hero.png';
 
 const DummyContent = () => (
     <>
@@ -29,20 +29,20 @@ const ctaList: ISquareCtaCardProps[] = [
         tagline: 'BENEFITS',
         title: 'Sit tristique sed a morbi. Adrtuoopwopo',
         content: <DummyContent />,
-        image_url: '/square_cta.png',
+        image_url: '/square-cta.png',
     },
     {
         tagline: 'BENEFITS',
         title: 'Sit tristique sed a morbi. Adrtuoopwopo',
         content: <DummyContent />,
-        image_url: '/square_cta.png',
+        image_url: '/square-cta.png',
         reverse: false,
     },
     {
         tagline: 'BENEFITS',
         title: 'Sit tristique sed a morbi. Adrtuoopwopo',
         content: <DummyContent />,
-        image_url: '/square_cta.png',
+        image_url: '/square-cta.png',
     },
 ];
 

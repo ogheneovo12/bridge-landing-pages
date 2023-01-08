@@ -9,7 +9,7 @@ import HomeLayout from 'components/Layouts/HomeLayout.layouts';
 import Head from 'next/head';
 import hero_img from 'images/services/ELECTRICIANS.jpg';
 import escrow_img from 'images/cta/escrow.png';
-import domore_img from 'images/cta/doMore.png';
+import domore_img from 'images/cta/do-more.png';
 import booking_img from 'images/cta/booking.png';
 //import smart_img from 'images/smart.png';
 

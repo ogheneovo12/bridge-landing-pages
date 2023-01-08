@@ -155,7 +155,7 @@ function HeroSection({
                         width={imgDimension?.width || 411}
                         height={imgDimension?.height || 500}
                         src={Array.isArray(text.images) ? text.images[typeIndex] : imageUrl}
-                        alt="ukuanovwe ovo avatar"
+                        alt="Hero Image"
                     />
                 </div>
             </div>

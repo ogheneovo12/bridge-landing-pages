@@ -4,7 +4,7 @@ import HeroSection from 'components/LandingPage/HeroSection';
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import hero_img from 'images/hero/referral_hero.png';
+import hero_img from 'images/hero/referral-hero.png';
 
 const ReferralPage: PageWithLayout<void> = () => {
     const router = useRouter();

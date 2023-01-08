@@ -10,7 +10,7 @@ import Head from 'next/head';
 
 import hero_img from 'images/services/ELECTRICIANS.jpg';
 import escrow_img from 'images/cta/escrow.png';
-import domore_img from 'images/cta/doMore.png';
+import domore_img from 'images/cta/do-more.png';
 import booking_img from 'images/cta/booking.png';
 import { css } from '@emotion/css';
 
@@ -44,17 +44,21 @@ const ctaList: ICtaCardProps[] = [
 ];
 
 const heroTextsToImages = {
-    Electricians: '/ELECTRICIANS.jpg',
-    Artisans: '/ARTISANS.jpg',
-    Cleaners: '/CLEANERS.jpg',
-    Riders: '/DISPATCHRIDERS.jpg',
-    Teachers: '/TEACHERS.png',
-    Tailors: '/TAILORS.png',
-    Plumbers: '/PLUMBERS.jpg',
-    Photographers: '/PHOTOGRAPHERS.jpg',
-    Painters: '/PAINTERS.jpg',
-    Mechanics: '/MECHANICS.jpg',
-    Marketers: '/MARKETERS.jpg',
+    Electricians: '/electricians.jpg',
+    Artisans: '/artisans.jpg',
+    Cleaners: '/cleaners.jpg',
+    Riders: '/dispatch-riders.jpg',
+    Drivers: '/drivers.jpg',
+    Teachers: '/teachers.png',
+    Tailors: '/tailors.png',
+    Plumbers: '/plumbers.jpg',
+    Servicemen: '/service-men.jpg',
+    Photographers: '/photographers.jpg',
+    Painters: '/painters.jpg',
+    Mechanics: '/mechanics.jpg',
+    Marketers: '/marketers.jpg',
+    'Ac Repairers': '/ac-repairers.jpg',
+    'Makeup Artists': '/makeup-artists.jpg',
 };
 
 const Home: PageWithLayout<void> = () => {

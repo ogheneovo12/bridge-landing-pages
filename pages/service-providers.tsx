@@ -7,7 +7,7 @@ import ServiceSection, { app_steps } from 'components/LandingPage/ServiceSection
 import TestimonialSection, { generateTestimonialDummy } from 'components/LandingPage/TestimonialSection';
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
 import Head from 'next/head';
-import hero_img from 'images/hero/service_hero.png';
+import hero_img from 'images/hero/service-hero.png';
 import smart_img from 'images/smart.png';
 import financial_img from 'images/financial.png';
 import { css } from '@emotion/css';

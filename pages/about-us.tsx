@@ -103,7 +103,7 @@ const AboutUs: PageWithLayout<void> = () => {
                         </p>
                     </div>
                 </div>
-                <div className="bg-[url(/about_hero.png)] bg-cover bg-center min-h-[444px] flex flex-col justify-end md:px-14">
+                <div className="bg-[url(/about-hero.png)] bg-cover bg-center min-h-[444px] flex flex-col justify-end md:px-14">
                     <Row className="w-full max-w-[630px] bg-primary">
                         <Col span={8}>
                             <StatsBox count="12" label="Employees" />
