@@ -8,8 +8,8 @@ import TestimonialSection, { generateTestimonialDummy } from 'components/Landing
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
 import Head from 'next/head';
 import hero_img from 'images/hero/service-hero.png';
-import smart_img from 'images/smart.png';
-import financial_img from 'images/financial.png';
+import smart_img from 'images/cta/smart.png';
+import financial_img from 'images/cta/financial.png';
 import { css } from '@emotion/css';
 
 const ctaList: ICtaCardProps[] = [

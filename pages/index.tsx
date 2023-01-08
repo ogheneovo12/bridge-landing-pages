@@ -8,7 +8,7 @@ import TestimonialSection, { generateTestimonialDummy } from 'components/Landing
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
 import Head from 'next/head';
 
-import hero_img from 'images/services/ELECTRICIANS.jpg';
+import hero_img from 'images/services/electricians.jpg';
 import escrow_img from 'images/cta/escrow.png';
 import domore_img from 'images/cta/do-more.png';
 import booking_img from 'images/cta/booking.png';
