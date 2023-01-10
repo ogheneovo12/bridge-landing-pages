@@ -2,15 +2,17 @@ import { PageWithLayout } from '@/common/types/interfaces';
 import Container from 'components/Container';
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
 import RegisterForm from 'components/RegisterForm';
-import Head from 'next/head';
+import SEO from 'components/Seo';
 import Image from 'next/image';
 
 const RegisterPage: PageWithLayout<void> = () => {
     return (
         <>
-            <Head>
-                <title>Bridge Registeration Page</title>
-            </Head>
+            <SEO
+                image="https://cdn.bridge.africa/static-assets/hero/referral-hero.png"
+                title="Register"
+                description="Join the Ambassador Program and start earning."
+            />
             <Container
                 sectionClass="bg-[#efefef] py-[130px]"
                 containerClass="flex  item-center justify-between max-w-[1000px] xxl:max-w-[1200px] flex-col md:flex-row"

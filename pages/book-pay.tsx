@@ -7,8 +7,8 @@ import HeroSection from 'components/LandingPage/HeroSection';
 import ServiceSection, { app_services } from 'components/LandingPage/ServiceSection';
 import TestimonialSection, { generateTestimonialDummy } from 'components/LandingPage/TestimonialSection';
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
+import SEO from 'components/Seo';
 import { ISquareCtaCardProps } from 'components/SquareCtaCard';
-import Head from 'next/head';
 
 const DummyContent = () => (
     <>
@@ -72,9 +72,11 @@ const blogList: IBlogCardProps[] = [
 const Home: PageWithLayout<void> = () => {
     return (
         <>
-            <Head>
-                <title>Bridge Landing Page</title>
-            </Head>
+            <SEO
+                title="Book Services"
+                description="Book now pay later on Bridge"
+                image="https://cdn.bridge.africa/static-assets/hero/do-more-hero.png"
+            />
             <HeroSection
                 text={{
                     pre: '',

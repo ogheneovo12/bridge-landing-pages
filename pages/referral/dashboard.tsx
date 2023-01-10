@@ -37,7 +37,7 @@ const ReferralDashboard: PageWithLayout<void> = () => {
     return (
         <>
             <Head>
-                <title>Bridge Landing Page</title>
+                <title>Bridge Referral Dashboard</title>
             </Head>
             <Container sectionClass="pt-[150px] pb-10 bg-[#FAF0EF]">
                 <h2 className="text-[32px] leading-[41.66px] md:text-[54px] md:leading-[70.31px] md:text-center font-medium">

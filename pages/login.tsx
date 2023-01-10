@@ -2,15 +2,17 @@ import { PageWithLayout } from '@/common/types/interfaces';
 import Container from 'components/Container';
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
 import LoginForm from 'components/LoginForm';
-import Head from 'next/head';
+import SEO from 'components/Seo';
 import Image from 'next/image';
 
 const LoginPage: PageWithLayout<void> = () => {
     return (
         <>
-            <Head>
-                <title>Bridge Registeration Page</title>
-            </Head>
+            <SEO
+                image="https://cdn.bridge.africa/static-assets/others/printer.png"
+                title="Login"
+                description="Login to referral dashboard"
+            />
             <Container
                 sectionClass="bg-[#efefef] py-[130px]"
                 containerClass="flex  item-center justify-between max-w-[1000px] xxl:max-w-[1200px] flex-col md:flex-row"

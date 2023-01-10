@@ -6,9 +6,9 @@ import HeroSection from 'components/LandingPage/HeroSection';
 import ServiceSection, { app_steps } from 'components/LandingPage/ServiceSection';
 import TestimonialSection, { generateTestimonialDummy } from 'components/LandingPage/TestimonialSection';
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
-import Head from 'next/head';
 
 import { css } from '@emotion/css';
+import SEO from 'components/Seo';
 
 const ctaList: ICtaCardProps[] = [
     {
@@ -60,9 +60,10 @@ const heroTextsToImages = {
 const Home: PageWithLayout<void> = () => {
     return (
         <>
-            <Head>
-                <title>Bridge Landing Page</title>
-            </Head>
+            <SEO
+                title="Bridge Website"
+                description="ridge allows you connect with people closest to you with the right skills to meet your demands."
+            />
             <HeroSection
                 text={{
                     pre: 'Find',

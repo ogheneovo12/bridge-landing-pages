@@ -1,12 +1,12 @@
 import { PageWithLayout } from '@/common/types/interfaces';
 import Container from 'components/Container';
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
-import Head from 'next/head';
 import { Collapse } from 'antd';
 import styled from '@emotion/styled';
 import { v4 } from 'uuid';
 
 import { BsPlus, BsDash } from 'react-icons/bs';
+import SEO from 'components/Seo';
 
 const { Panel } = Collapse;
 
@@ -48,9 +48,7 @@ const FaqList: IFaq[] = [
 const FaqPage: PageWithLayout<void> = () => {
     return (
         <>
-            <Head>
-                <title>Bridge Registeration Page</title>
-            </Head>
+            <SEO title="Bridge Faq" description="Compilations of commmon inquiry of how bridge works" />
             <Container sectionClass="bg-[#efefef] py-[130px]" containerClass="">
                 <div>
                     <h2 className="text-[32px] text-center font-bold leading-[41.66px] lg:text-[64px] lg:leading-[82px] text-primary">

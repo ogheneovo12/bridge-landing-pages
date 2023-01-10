@@ -6,9 +6,9 @@ import HeroSection from 'components/LandingPage/HeroSection';
 import ServiceSection, { app_steps } from 'components/LandingPage/ServiceSection';
 import TestimonialSection, { generateTestimonialDummy } from 'components/LandingPage/TestimonialSection';
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
-import Head from 'next/head';
 
 import { css } from '@emotion/css';
+import SEO from 'components/Seo';
 
 const ctaList: ICtaCardProps[] = [
     {
@@ -34,9 +34,11 @@ const ctaList: ICtaCardProps[] = [
 const Home: PageWithLayout<void> = () => {
     return (
         <>
-            <Head>
-                <title>Bridge Landing Page</title>
-            </Head>
+            <SEO
+                image="https://cdn.bridge.africa/static-assets/hero/service-hero.png"
+                title="Service Providers"
+                description="Calling All Service Providers to 10x their earnings"
+            />
             <HeroSection
                 text={{
                     pre: 'Calling all',

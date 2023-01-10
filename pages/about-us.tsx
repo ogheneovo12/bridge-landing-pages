@@ -2,7 +2,7 @@ import { PageWithLayout } from '@/common/types/interfaces';
 import { Card, Col, Image as AntImage, Row } from 'antd';
 import Container from 'components/Container';
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
-import Head from 'next/head';
+import SEO from 'components/Seo';
 import Image, { StaticImageData } from 'next/image';
 import { v4 } from 'uuid';
 
@@ -80,9 +80,12 @@ const teams: ITeamCardProps[] = [
 const AboutUs: PageWithLayout<void> = () => {
     return (
         <>
-            <Head>
-                <title>Bridge Landing Page</title>
-            </Head>
+            <SEO
+                title="About Us"
+                description=" We have over 6,000 clients that are near you. Simply follow these 3 simple steps below to get
+                        started and be on your way to 10x earning."
+                image="https://cdn.bridge.africa/static-assets/hero/about-hero.png"
+            />
             <Container sectionClass="pt-[120px]">
                 <div className="flex flex-col lg:flex-row">
                     <div className="lg:px-5">
