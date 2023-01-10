@@ -32,7 +32,13 @@ function AlertModal({
 }) {
     return (
         <StyledModal footer={null} open={isOpen} onCancel={onClose}>
-            <Image className="mx-auto" src="/success.png" width={128} height={134} alt="success illustration" />
+            <Image
+                className="mx-auto"
+                src="https://cdn.bridge.africa/static-assets/others/success.png"
+                width={128}
+                height={134}
+                alt="success illustration"
+            />
             {message && <p className="text-lg font-medium text-black my-7">{message}</p>}
             <Button
                 onClick={onActionClick}

@@ -9,7 +9,6 @@ import TestimonialSection, { generateTestimonialDummy } from 'components/Landing
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
 import { ISquareCtaCardProps } from 'components/SquareCtaCard';
 import Head from 'next/head';
-import hero_img from 'images/hero/do-more-hero.png';
 
 const DummyContent = () => (
     <>
@@ -29,20 +28,20 @@ const ctaList: ISquareCtaCardProps[] = [
         tagline: 'BENEFITS',
         title: 'Sit tristique sed a morbi. Adrtuoopwopo',
         content: <DummyContent />,
-        image_url: '/square-cta.png',
+        image_url: 'https://cdn.bridge.africa/static-assets/cta/square-cta.png',
     },
     {
         tagline: 'BENEFITS',
         title: 'Sit tristique sed a morbi. Adrtuoopwopo',
         content: <DummyContent />,
-        image_url: '/square-cta.png',
+        image_url: 'https://cdn.bridge.africa/static-assets/cta/square-cta.png',
         reverse: false,
     },
     {
         tagline: 'BENEFITS',
         title: 'Sit tristique sed a morbi. Adrtuoopwopo',
         content: <DummyContent />,
-        image_url: '/square-cta.png',
+        image_url: 'https://cdn.bridge.africa/static-assets/cta/square-cta.png',
     },
 ];
 
@@ -51,21 +50,21 @@ const blogList: IBlogCardProps[] = [
         title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices.',
         excerpt:
             'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-        blogImage: '/image17.png',
+        blogImage: 'https://cdn.bridge.africa/static-assets/others/image17.png',
         blogUrl: '#',
     },
     {
         title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices.',
         excerpt:
             'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-        blogImage: '/image18.png',
+        blogImage: 'https://cdn.bridge.africa/static-assets/others/image18.png',
         blogUrl: '#',
     },
     {
         title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices.',
         excerpt:
             'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-        blogImage: '/image19.png',
+        blogImage: 'https://cdn.bridge.africa/static-assets/others/image19.png',
         blogUrl: '#',
     },
 ];
@@ -83,7 +82,7 @@ const Home: PageWithLayout<void> = () => {
                     end: 'pay later on Bridge',
                 }}
                 subText="Bridge allows you connect with people closest to you with the right skills to meet your demands."
-                imageUrl={hero_img}
+                imageUrl={'https://cdn.bridge.africa/static-assets/hero/do-more-hero.png'}
                 leftSideClassName="justify-center bg-no-repeat bg-center bg-contain"
                 imgContainerClassName="bg-[#F8F8F8] lg:-ml-32 max-w-[708px] max-h-[660px]"
                 imgDimension={{
@@ -101,7 +100,10 @@ const Home: PageWithLayout<void> = () => {
             <BlogSection blogs={blogList} />
             <TestimonialSection
                 title="Other Pros are saying..."
-                testimonials={generateTestimonialDummy('DANIELLA ENUOYIBO', '/daniella.png')}
+                testimonials={generateTestimonialDummy(
+                    'DANIELLA ENUOYIBO',
+                    'https://cdn.bridge.africa/static-assets/others/daniella.png',
+                )}
             />
             <AppCtaSection />
         </>

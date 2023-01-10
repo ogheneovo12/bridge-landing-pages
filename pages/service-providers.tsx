@@ -7,9 +7,7 @@ import ServiceSection, { app_steps } from 'components/LandingPage/ServiceSection
 import TestimonialSection, { generateTestimonialDummy } from 'components/LandingPage/TestimonialSection';
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
 import Head from 'next/head';
-import hero_img from 'images/hero/service-hero.png';
-import smart_img from 'images/cta/smart.png';
-import financial_img from 'images/cta/financial.png';
+
 import { css } from '@emotion/css';
 
 const ctaList: ICtaCardProps[] = [
@@ -17,7 +15,7 @@ const ctaList: ICtaCardProps[] = [
         tag: 'FINANCIAL SERVICES',
         title: 'Scale up with our financial services',
         description: 'Gain access to credit, investments, pensions, all made available through our fintech partners.',
-        iconUrl: financial_img,
+        iconUrl: 'https://cdn.bridge.africa/static-assets/cta/financial.png',
         dropContent: <CheckCard title="Credit Granted" amount="65,000" />,
         action_link: '/finance',
     },
@@ -26,7 +24,7 @@ const ctaList: ICtaCardProps[] = [
         title: 'Work smart, save time & stress',
         description:
             'Track your bussiness performance, send invoices, set appointments, access tools to scale your business.',
-        iconUrl: smart_img,
+        iconUrl: 'https://cdn.bridge.africa/static-assets/cta/smart.png',
         reverse: false,
         dropContent: <CheckCard title="Payment Received" amount="57,000" />,
         action_link: '/smart',
@@ -46,9 +44,13 @@ const Home: PageWithLayout<void> = () => {
                     end: '10x your earnings',
                 }}
                 subText="Bridge allows you connect with people closest to you with the right skills to meet your demands."
-                imageUrl={hero_img}
-                leftSideClassName="justify-center bg-[url(/bgblob.png)] bg-no-repeat bg-center bg-contain"
+                imageUrl={'https://cdn.bridge.africa/static-assets/hero/service-hero.png'}
+                leftSideClassName="justify-center bg-[url(https://cdn.bridge.africa/static-assets/bg/bgblob.png)] bg-no-repeat bg-center bg-contain"
                 imgContainerClassName="max-w-[578px] max-h-[744px]"
+                imgDimension={{
+                    width: 2312,
+                    height: 2974,
+                }}
                 linkUp={{
                     label: 'SIGNUP AS A CLIENT',
                     url: '/register',
@@ -62,8 +64,8 @@ const Home: PageWithLayout<void> = () => {
             <CtaSection
                 sections={ctaList}
                 ctaImageProps={{
-                    bg: '/bgColoredRight.png',
-                    reverseBg: '/bgColoredLeft.png',
+                    bg: 'https://cdn.bridge.africa/static-assets/bg/bg-colored-right.png',
+                    reverseBg: 'https://cdn.bridge.africa/static-assets/bg/bg-colored-left.png',
                     bgContainerClassName: 'bg-white bg-no-repeat bg-right ant_image_end',
                     bgReverseContainerClassName: 'bg-left',
                     imageContainerClassName: css`
@@ -75,13 +77,18 @@ const Home: PageWithLayout<void> = () => {
                         }
                     `,
                     imageProps: {
+                        width: 340,
+                        height: 459,
                         className: 'animate__bounceInUp animate__animated wow',
                     },
                 }}
             />
             <TestimonialSection
                 title="Other Pros are saying..."
-                testimonials={generateTestimonialDummy('DANIELLA ENUOYIBO', '/daniella.png')}
+                testimonials={generateTestimonialDummy(
+                    'DANIELLA ENUOYIBO',
+                    'https://cdn.bridge.africa/static-assets/others/daniella.png',
+                )}
             />
             <AppCtaSection />
         </>

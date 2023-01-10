@@ -2,9 +2,6 @@ import { Button } from 'antd';
 import Container from 'components/Container';
 import Image from 'next/image';
 import React from 'react';
-import playstore from 'images/app/playstore.png';
-import appstore from 'images/app/appstore.png';
-import app_preview from 'images/app/app-preview.png';
 
 function AppCtaSection() {
     return (
@@ -34,7 +31,14 @@ function AppCtaSection() {
                     className="   wow animate__fadeInUp animate__animated  space-x-6 flex items-center justify-center md:justify-start"
                 >
                     <Button
-                        icon={<Image src={appstore} width={23} height={28} alt={'app store button'} />}
+                        icon={
+                            <Image
+                                src={'https://cdn.bridge.africa/static-assets/app/appstore.png'}
+                                width={23}
+                                height={28}
+                                alt={'app store button'}
+                            />
+                        }
                         href="/#services"
                         className="space-x-2 rounded-md flex items-center justify-center py-0 max-w-[186px] w-full h-[56px]  bg-secondary text-white hover:bg-primary hover:text-white"
                     >
@@ -44,8 +48,14 @@ function AppCtaSection() {
                         </span>
                     </Button>
                     <Button
-                        icon={<Image src={playstore} width={23} height={28} alt={'app store button'} />}
-                        href="https://drive.google.com/uc?export=download&id=1dref-Gwx0TBBkUQ8HgaiVutUZTc-MJaX"
+                        icon={
+                            <Image
+                                src={'https://cdn.bridge.africa/static-assets/app/playstore.png'}
+                                width={23}
+                                height={28}
+                                alt={'app store button'}
+                            />
+                        }
                         className="space-x-2 rounded-md flex items-center justify-center py-0 h-[56px] max-w-[186px] w-full text-white bg-secondary"
                     >
                         <span className="leading-[10px]">
@@ -60,8 +70,10 @@ function AppCtaSection() {
                     <Image
                         className="animate__animated wow animate__rotateInUpRight"
                         layout="responsive"
-                        src={app_preview}
+                        src={'https://cdn.bridge.africa/static-assets/app/app-preview.png'}
                         alt="app preview"
+                        width={1660}
+                        height={2460}
                     />
                 </div>
             </div>

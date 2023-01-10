@@ -5,9 +5,6 @@ import HomeLayout from 'components/Layouts/HomeLayout.layouts';
 import Head from 'next/head';
 import Image, { StaticImageData } from 'next/image';
 import { v4 } from 'uuid';
-import cover1 from 'images/team/cover1.png';
-import cover2 from 'images/team/cover2.png';
-import cover from 'images/team/cover.png';
 
 const StatsBox = ({ count, label }: { count: string; label: string }) => (
     <div className="p-4 md:p-8">
@@ -34,47 +31,47 @@ const TeamCard = ({ team_img, name, role }: ITeamCardProps) => (
 
 const teams: ITeamCardProps[] = [
     {
-        team_img: cover,
+        team_img: 'https://cdn.bridge.africa/static-assets/team/cover.png',
         name: 'Full Name',
         role: 'role',
     },
     {
-        team_img: cover1,
+        team_img: 'https://cdn.bridge.africa/static-assets/team/cover1.png',
         name: 'Full Name',
         role: 'role',
     },
     {
-        team_img: cover2,
+        team_img: 'https://cdn.bridge.africa/static-assets/team/cover2.png',
         name: 'Full Name',
         role: 'role',
     },
     {
-        team_img: cover,
+        team_img: 'https://cdn.bridge.africa/static-assets/team/cover.png',
         name: 'Full Name',
         role: 'role',
     },
     {
-        team_img: cover1,
+        team_img: 'https://cdn.bridge.africa/static-assets/team/cover1.png',
         name: 'Full Name',
         role: 'role',
     },
     {
-        team_img: cover2,
+        team_img: 'https://cdn.bridge.africa/static-assets/team/cover2.png',
         name: 'Full Name',
         role: 'role',
     },
     {
-        team_img: cover,
+        team_img: 'https://cdn.bridge.africa/static-assets/team/cover.png',
         name: 'Full Name',
         role: 'role',
     },
     {
-        team_img: cover1,
+        team_img: 'https://cdn.bridge.africa/static-assets/team/cover1.png',
         name: 'Full Name',
         role: 'role',
     },
     {
-        team_img: cover2,
+        team_img: 'https://cdn.bridge.africa/static-assets/team/cover2.png',
         name: 'Full Name',
         role: 'role',
     },
@@ -103,7 +100,7 @@ const AboutUs: PageWithLayout<void> = () => {
                         </p>
                     </div>
                 </div>
-                <div className="bg-[url(/about-hero.png)] bg-cover bg-center min-h-[444px] flex flex-col justify-end md:px-14">
+                <div className="bg-[url(https://cdn.bridge.africa/static-assets/hero/about-hero.png)] bg-cover bg-center min-h-[444px] flex flex-col justify-end md:px-14">
                     <Row className="w-full max-w-[630px] bg-primary">
                         <Col span={8}>
                             <StatsBox count="12" label="Employees" />
@@ -166,7 +163,10 @@ const AboutUs: PageWithLayout<void> = () => {
                             md={8}
                             lg={6}
                         >
-                            <AntImage preview={false} src={`/partners/image${i + 1}.png`} />
+                            <AntImage
+                                preview={false}
+                                src={`https://cdn.bridge.africa/static-assets/others/partners/image${i + 1}.png`}
+                            />
                         </Col>
                     ))}
                 </Row>

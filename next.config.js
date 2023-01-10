@@ -4,7 +4,7 @@ const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
     images: {
-        domains: ['image.tmdb.org'],
+        domains: ['image.tmdb.org',"cdn.bridge.africa"],
     },
     webpack(config) {
         config.module.rules.push({

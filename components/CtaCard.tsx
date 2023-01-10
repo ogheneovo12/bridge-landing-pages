@@ -41,7 +41,7 @@ const DropContent = ({ content, reverse }: { content: React.ReactNode; reverse?:
 );
 
 const defaultImageProps: CtaImageProps = {
-    bg: '/Bridge.png',
+    bg: 'https://cdn.bridge.africa/static-assets/bg/bridge.png',
     bgContainerClassName: 'bg-[#EBBFA7]',
     imageContainerClassName: '',
     imageProps: {

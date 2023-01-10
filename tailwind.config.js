@@ -3,8 +3,8 @@ module.exports = {
     theme: {
         extend: {
             backgroundImage: {
-                'hero-pattern': "url('/bgcirc.png')",
-                'light-hero-pattern': "url('/bgcirc2.png')",
+                'hero-pattern': "url('https://cdn.bridge.africa/static-assets/bg/bgcirc.png')",
+                'light-hero-pattern': "url('https://cdn.bridge.africa/static-assets/bg/bgcirc2.png')",
             },
             container: {
                 center: true,

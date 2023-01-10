@@ -28,7 +28,7 @@ const RegisterPage: PageWithLayout<void> = () => {
                             quality={100}
                             width={297}
                             height={329}
-                            src={'/printer.png'}
+                            src={'https://cdn.bridge.africa/static-assets/others/printer.png'}
                             alt="printer illustrat"
                         />
                     </div>

@@ -5,8 +5,6 @@ import Image, { StaticImageData } from 'next/image';
 import cx from 'classnames';
 import Typewriter, { TypewriterClass } from 'typewriter-effect';
 
-import playstore from 'images/app/playstore.png';
-import appstore from 'images/app/appstore.png';
 import { MouseIcon } from 'icons';
 import { HiArrowRight } from 'react-icons/hi';
 import Link from 'next/link';
@@ -110,7 +108,14 @@ function HeroSection({
                     ) : (
                         <>
                             <Button
-                                icon={<Image src={appstore} width={23} height={28} alt={'app store button'} />}
+                                icon={
+                                    <Image
+                                        src={'https://cdn.bridge.africa/static-assets/app/appstore.png'}
+                                        width={23}
+                                        height={28}
+                                        alt={'app store button'}
+                                    />
+                                }
                                 href="/#services"
                                 className="rounded-[17px] space-x-2  flex items-center justify-center py-0 max-w-[186px] w-full h-[56px]  bg-secondary text-white hover:bg-primary hover:text-white"
                             >
@@ -120,8 +125,14 @@ function HeroSection({
                                 </span>
                             </Button>
                             <Button
-                                icon={<Image src={playstore} width={23} height={28} alt={'app store button'} />}
-                                href="https://drive.google.com/uc?export=download&id=1dref-Gwx0TBBkUQ8HgaiVutUZTc-MJaX"
+                                icon={
+                                    <Image
+                                        src={'https://cdn.bridge.africa/static-assets/app/playstore.png'}
+                                        width={23}
+                                        height={28}
+                                        alt={'app store button'}
+                                    />
+                                }
                                 className="rounded-[17px] space-x-2 flex items-center justify-center py-0 h-[56px] max-w-[186px] w-full text-white bg-secondary"
                             >
                                 <span className="leading-[10px]">

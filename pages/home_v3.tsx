@@ -13,7 +13,7 @@ const ctaList: ICtaCardProps[] = [
         tag: 'FINANCIAL SERVICES',
         title: 'Scale up with our financial services',
         description: 'Gain access to credit, investments, pensions, all made available through our fintech partners.',
-        iconUrl: '/chart.png',
+        iconUrl: 'https://cdn.bridge.africa/static-assets/others/chart.png',
         dropContent: <CheckCard title="Credit Granted" amount="65,000" />,
     },
     {
@@ -21,7 +21,7 @@ const ctaList: ICtaCardProps[] = [
         title: 'Work smart, save time & stress',
         description:
             'Track your bussiness performance, send invoices, set appointments, access tools to scale your business.',
-        iconUrl: '/settings.png',
+        iconUrl: 'https://cdn.bridge.africa/static-assets/others/settings.png',
         reverse: false,
         dropContent: <CheckCard title="Payment Received" amount="57,000" />,
     },
@@ -41,7 +41,7 @@ const Home: PageWithLayout<void> = () => {
                 }}
                 subText="Bridge allows you connect with people closest to you with the right skills to meet your demands."
                 imageUrl="/hero3.png"
-                leftSideClassName="justify-center bg-[url(/bgblob.png)] bg-no-repeat bg-center bg-contain "
+                leftSideClassName="justify-center bg-[url(https://cdn.bridge.africa/static-assets/bg/bgblob.png)] bg-no-repeat bg-center bg-contain "
                 imgContainerClassName="max-w-[578px] max-h-[744px]"
                 imgDimension={{
                     width: 578,
@@ -60,7 +60,10 @@ const Home: PageWithLayout<void> = () => {
             <CtaSection sections={ctaList} />
             <TestimonialSection
                 title="Other Pros are saying..."
-                testimonials={generateTestimonialDummy('DANIELLA ENUOYIBO', '/daniella.png')}
+                testimonials={generateTestimonialDummy(
+                    'DANIELLA ENUOYIBO',
+                    'https://cdn.bridge.africa/static-assets/others/daniella.png',
+                )}
             />
             <AppCtaSection />
         </>

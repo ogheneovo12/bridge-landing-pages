@@ -4,7 +4,6 @@ import HeroSection from 'components/LandingPage/HeroSection';
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import hero_img from 'images/hero/referral-hero.png';
 
 const ReferralPage: PageWithLayout<void> = () => {
     const router = useRouter();
@@ -20,7 +19,7 @@ const ReferralPage: PageWithLayout<void> = () => {
                     end: 'inviting friends',
                 }}
                 subText="Do you already tell your friends about Bridge? Well, it is time to get rewarded."
-                imageUrl={hero_img}
+                imageUrl={'https://cdn.bridge.africa/static-assets/hero/referral-hero.png'}
                 imgContainerClassName="after_box max-w-[617px] max-h-[705px]"
                 linkUp={{
                     label: 'Already have an account? Sign In',

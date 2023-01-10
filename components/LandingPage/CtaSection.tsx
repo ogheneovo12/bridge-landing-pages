@@ -1,21 +1,21 @@
-import React from 'react';
-import CtaCard, { CtaImageProps, ICtaCardProps } from 'components/CtaCard';
-import Container from 'components/Container';
-import { v4 } from 'uuid';
-import AnimatedCheck from 'components/AnimatedCheck';
-import nineMobile from 'images/partners/9mobile.png';
-import ikejaEl from 'images/partners/ikeja.png';
-import mtn from 'images/partners/mtn.png';
-import dstv from 'images/partners/dstv.png';
-import glo from 'images/partners/glo.png';
-import airtel from 'images/partners/airtel.png';
-import gotv from 'images/partners/gotv.png';
 import { Col, Row } from 'antd';
-import Image from 'next/image';
-import startimes from 'images/partners/startimes.png';
+import AnimatedCheck from 'components/AnimatedCheck';
+import Container from 'components/Container';
+import CtaCard, { CtaImageProps, ICtaCardProps } from 'components/CtaCard';
 import SquareCtaCard, { ISquareCtaCardProps } from 'components/SquareCtaCard';
+import Image from 'next/image';
+import { v4 } from 'uuid';
 
-export const networks = [mtn, glo, airtel, nineMobile, dstv, gotv, startimes, ikejaEl];
+export const networks = [
+    'mtn.png',
+    'glo.png',
+    'airtel.png',
+    '9mobile.png',
+    'dstv.png',
+    'gotv.png',
+    'startimes.png',
+    'ikeja.png',
+];
 
 export const CheckCard = ({ title, amount }: { title: string; amount: string }) => (
     <div className="flex items-center space-x-3">
@@ -32,7 +32,14 @@ export const NetworkGrid = () => (
         {networks?.map((netimg) => (
             <Col key={v4()} span={6}>
                 <div className="h-[37px] p-[5px] w-[37px] flex items-center justify-center rounded-[100%] bg-white shadow-[0_1.03798px_6.99596px_rgba(0,0,0,0.25)]">
-                    <Image objectFit="contain" quality={100} width={37} height={37} src={netimg} alt="Network Imahe" />
+                    <Image
+                        objectFit="contain"
+                        quality={100}
+                        width={37}
+                        height={37}
+                        src={`https://cdn.bridge.africa/static-assets/partners/${netimg}`}
+                        alt="Network Image"
+                    />
                 </div>
             </Col>
         ))}

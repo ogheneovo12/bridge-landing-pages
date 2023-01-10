@@ -7,25 +7,20 @@ import ServiceSection, { app_steps } from 'components/LandingPage/ServiceSection
 import TestimonialSection, { generateTestimonialDummy } from 'components/LandingPage/TestimonialSection';
 import HomeLayout from 'components/Layouts/HomeLayout.layouts';
 import Head from 'next/head';
-import hero_img from 'images/services/electricians.jpg';
-import escrow_img from 'images/cta/escrow.png';
-import domore_img from 'images/cta/do-more.png';
-import booking_img from 'images/cta/booking.png';
-//import smart_img from 'images/smart.png';
 
 const ctaList: ICtaCardProps[] = [
     {
         tag: 'Credit BNPL Access',
         title: 'Book now pay later on Bridge',
         description: "Need a service but can't pay now? Book Now Pay Later through our financial services partners.",
-        iconUrl: booking_img,
+        iconUrl: 'https://cdn.bridge.africa/static-assets/cta/booking.png',
         dropContent: <CheckCard title="Credit Granted" amount="50,000" />,
     },
     {
         tag: 'SECURELY DO BUSSINESS',
         title: 'Your money is safely locked in escrow',
         description: "Need a service but can't pay now? Book Now Pay Later through our financial services partners.",
-        iconUrl: escrow_img,
+        iconUrl: 'https://cdn.bridge.africa/static-assets/cta/escrow.png',
         reverse: false,
         dropContent: <CheckCard title="Locked In Escrow" amount="30,550" />,
     },
@@ -34,7 +29,7 @@ const ctaList: ICtaCardProps[] = [
         title: 'Do more with the Bridge app',
         description:
             'Pay bills, buy airtime, track your service expenses, and get cash-back on all transactions you make on Bridge.',
-        iconUrl: domore_img,
+        iconUrl: 'https://cdn.bridge.africa/static-assets/cta/do-more.png',
         dropContent: <NetworkGrid />,
     },
 ];
@@ -52,7 +47,7 @@ const Home: PageWithLayout<void> = () => {
                     end: 'Near You',
                 }}
                 subText="Bridge allows you connect with people closest to you with the right skills to meet your demands."
-                imageUrl={hero_img}
+                imageUrl={'https://cdn.bridge.africa/static-assets/services/electricians.png'}
                 linkUp={{
                     label: 'SIGNUP AS A SERVICE PROVIDER',
                     url: '/#',
@@ -66,8 +61,8 @@ const Home: PageWithLayout<void> = () => {
             <CtaSection
                 sections={ctaList}
                 ctaImageProps={{
-                    bg: '/bgColoredRight.png',
-                    reverseBg: '/bgColoredLeft.png',
+                    bg: 'https://cdn.bridge.africa/static-assets/bg/bg-colored-right.png',
+                    reverseBg: 'https://cdn.bridge.africa/static-assets/bg/bg-colored-left.png',
                     bgContainerClassName: 'bg-white bg-no-repeat bg-right ant_image_end',
                     bgReverseContainerClassName: 'bg-left',
                     imageProps: {
@@ -77,7 +72,10 @@ const Home: PageWithLayout<void> = () => {
             />
             <TestimonialSection
                 title="What clients are saying..."
-                testimonials={generateTestimonialDummy('David olaniyan', '/david.png')}
+                testimonials={generateTestimonialDummy(
+                    'David olaniyan',
+                    'https://cdn.bridge.africa/static-assets/others/david.png',
+                )}
             />
             <AppCtaSection />
         </>
